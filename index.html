@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Task</title>
+  <style>
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      
+    }
+
+    .card {
+      flex: 1;
+      padding: 20px;
+      border: 2px solid #cfc3c3;
+      border-radius: 5px;
+      text-align: center;
+
+    }
+
+
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  
+<body>
+
+  <nav class="navbar navbar-expand bg-body-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Assignment</a>
+      
+      <div id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <h2 class="my-3 d-flex justify-content-center">PRICING LIST</h2>
+
+        
+        <div class="para d-flex justify-content-center">
+            <p>Select the number of users, using the slider given below</p>
+        </div>
+
+
+    <div class="slider d-flex justify-content-center my-3">
+        <input type="range" min="0" max="30" step="1" onchange="highlight()">
+      </div>
+
+  <div class="card-container mt-5">
+
+    <div class="card mx-4 border-4" style="width: 18rem; " id="card1">
+        <div class="card-body ">
+          <h5 class="card-title py-1">Free</h5>
+          <hr>
+          <p class="card-text">10 Users included</p>
+          <p class="card-text">2 GB of storage</p>
+          <p class="card-text">Email support</p>
+          <a href="form.html" class="btn btn-primary">Sign up for Free</a>
+        </div>
+      </div>
+    
+      
+      <div class="card mx-4 border-4" style="width: 18rem;" id="card2">
+        <div class="card-body">
+          <h5 class="card-title">Pro</h5>
+          <hr>
+          <p class="card-text">20 Users included</p>
+          <p class="card-text">10 GB of storage</p>
+          <p class="card-text">Priority Email support</p>
+          <a href="form.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    
+      
+      <div class="card mx-4 border-4" style="width: 18rem;" id="card1">
+        <div class="card-body">
+          <h5 class="card-title">Expert</h5>
+          <hr>
+          <p class="card-text">30 Users included</p>
+          <p class="card-text">15 GB of storage</p>
+          <p class="card-text">Phone and Email support</p>
+          <a href="form.html" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+
+  </div>
+
+
+
+
+  <script>
+    // Function to highlight the appropriate card based on the slider value
+    function highlight() {
+      const sliderValue = parseInt(document.querySelector('.slider input').value);
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach((card, i) => {
+        const startValue = i * 10;
+        const endValue = startValue + 10;
+
+        if (sliderValue > startValue && sliderValue <= endValue) {
+          card.classList.add('bg-light', 'border-primary-subtle');
+        } 
+
+        else {
+          card.classList.remove('bg-light', 'border-primary-subtle');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
+
